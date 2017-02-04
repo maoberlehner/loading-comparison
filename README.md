@@ -1,7 +1,7 @@
 # loading-comparison
 Compare the loading performance of two or more websites or website variations.
 
-![CLI output example](https://cdn.rawgit.com/maoberlehner/loading-comparison/master/screenshot.png)
+![CLI output example](https://cdn.rawgit.com/maoberlehner/loading-comparison/513bf0da/screenshot.png)
 
 ## Getting started
 ```bash
