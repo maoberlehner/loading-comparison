@@ -1,6 +1,8 @@
 # loading-comparison
 Compare the loading performance of two or more websites or website variations.
 
+![CLI output example](https://cdn.rawgit.com/maoberlehner/loading-comparison/master/screenshot.png)
+
 ## Getting started
 ```bash
 # Install the package globally.
@@ -19,6 +21,7 @@ This module is powered by [browsertime](https://github.com/sitespeedio/browserti
 ## About
 ### Author
 Markus Oberlehner  
+Website: https://markus.oberlehner.net  
 Twitter: https://twitter.com/MaOberlehner  
 PayPal.me: https://paypal.me/maoberlehner
 
