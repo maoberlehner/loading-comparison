@@ -29,8 +29,13 @@
     "cli-table": "^0.3.1"
   },
   "devDependencies": {
+    "ava": "^0.18.1",
     "eslint": "^3.13.1",
     "eslint-config-modularis": "^4.0.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "sinon": "^1.17.7"
+  },
+  "scripts": {
+    "test": "ava"
   }
 }
