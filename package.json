@@ -1,13 +1,12 @@
 {
   "name": "loading-comparison",
-  "description": "",
+  "description": "Compare the loading performance of two or more websites or website variations",
   "keywords": [
     "loading-time",
     "comparison",
     "benchmark",
     "performance",
-    "browsertime",
-    "sitespeed.io"
+    "browsertime"
   ],
   "version": "0.1.0",
   "author": "Markus Oberlehner",
