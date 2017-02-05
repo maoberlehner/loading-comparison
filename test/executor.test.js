@@ -3,6 +3,13 @@ import test from 'ava';
 
 import executorFactory from '../lib/executor';
 
+test(`Should be a function.`, (t) => {
+  const exec = () => {};
+  const executor = executorFactory({ exec });
+
+  t.is(typeof executor, `function`);
+});
+
 test(`Should return a promise.`, (t) => {
   const exec = () => {};
   const executor = executorFactory({ exec });
