@@ -13,7 +13,7 @@ const logResultFactory = require(`../lib/log-result`);
 
 const executor = executorFactory({ exec });
 const browsertime = browsertimeFactory({ fs, path, executor });
-const formatValues = formatValuesFactory({ chalk });
+const formatValues = formatValuesFactory({ chalk, Math });
 const logResult = logResultFactory({ chalk, Table, formatValues });
 
 const resultDirectory = path.resolve(__dirname, `../results`);
