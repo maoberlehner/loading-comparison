@@ -16,7 +16,7 @@ test(`Should return a promise.`, (t) => {
   t.is(typeof executor(`fake command`).then, `function`);
 });
 
-test(`The exec function should be called with given command.`, (t) => {
+test(`The exec function should be called with the given command.`, (t) => {
   const exec = sinon.spy();
   const executor = executorFactory({ exec });
   const command = `fake command`;
