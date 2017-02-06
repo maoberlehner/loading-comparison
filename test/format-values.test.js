@@ -4,11 +4,18 @@ import test from 'ava';
 import formatValuesFactory from '../lib/format-values';
 
 test(`Should be a function.`, (t) => {
-  const chalk = () => {};
-  const Math = { min: () => {} };
-  const formatValues = formatValuesFactory({ chalk, Math });
+  const formatValues = formatValuesFactory({});
 
   t.is(typeof formatValues, `function`);
+});
+
+test(`Should call Math.min().`, (t) => {
+  const Math = { min: sinon.spy() };
+  const values = [1, 2];
+  const formatValues = formatValuesFactory({ Math });
+
+  formatValues(values);
+  t.true(Math.min.calledWith(...values));
 });
 
 test(`Should format the min values of an array.`, (t) => {
