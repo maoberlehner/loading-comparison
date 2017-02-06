@@ -4,7 +4,7 @@ import test from 'ava';
 import formatValuesFactory from '../lib/format-values';
 
 test(`Should be a function.`, (t) => {
-  const formatValues = formatValuesFactory({});
+  const formatValues = formatValuesFactory();
 
   t.is(typeof formatValues, `function`);
 });

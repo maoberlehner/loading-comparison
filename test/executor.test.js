@@ -4,8 +4,7 @@ import test from 'ava';
 import executorFactory from '../lib/executor';
 
 test(`Should be a function.`, (t) => {
-  const exec = () => {};
-  const executor = executorFactory({ exec });
+  const executor = executorFactory();
 
   t.is(typeof executor, `function`);
 });
