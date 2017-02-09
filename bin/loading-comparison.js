@@ -1,20 +1,9 @@
 #!/usr/bin/env node
 const args = require(`args`);
-const chalk = require(`chalk`);
-const exec = require(`child_process`).exec;
-const fs = require(`fs`);
 const path = require(`path`);
-const Table = require(`cli-table`);
 
-const executorFactory = require(`../lib/executor`);
-const browsertimeFactory = require(`../lib/browsertime`);
-const formatValuesFactory = require(`../lib/format-values`);
-const logResultFactory = require(`../lib/log-result`);
-
-const executor = executorFactory({ exec });
-const browsertime = browsertimeFactory({ fs, path, executor });
-const formatValues = formatValuesFactory({ chalk, Math });
-const logResult = logResultFactory({ chalk, Table, formatValues });
+const browsertime = require(`../lib/browsertime`).default;
+const logResult = require(`../lib/log-result`).default;
 
 const resultDirectory = path.resolve(__dirname, `../results`);
 const resultFile = `browsertime.json`;
