@@ -14,7 +14,7 @@ test(`Should return a promise.`, (t) => {
   t.is(typeof executor({ exec }, `fake command`).then, `function`);
 });
 
-test(`The exec function should be called with the given command.`, (t) => {
+test(`Should call the exec function with the given command.`, (t) => {
   const exec = sinon.spy();
   const command = `fake command`;
 
@@ -22,7 +22,7 @@ test(`The exec function should be called with the given command.`, (t) => {
   t.true(exec.calledWith(command));
 });
 
-test(`The resolver function should be called.`, async (t) => {
+test(`Should call the resolver function.`, async (t) => {
   const exec = (command, callback = () => {}) => callback();
   const resolver = sinon.spy();
 
