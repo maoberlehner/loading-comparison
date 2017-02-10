@@ -22,10 +22,10 @@ test(`Should call the exec function with the given command.`, (t) => {
   t.true(exec.calledWith(command));
 });
 
-test(`Should call the resolver function.`, async (t) => {
+test(`Should call the callback function.`, async (t) => {
   const exec = (command, callback = () => {}) => callback();
-  const resolver = sinon.spy();
+  const callback = sinon.spy();
 
-  executeCommand({ exec }, `fake command`, resolver);
-  t.true(await resolver.called);
+  executeCommand({ exec }, `fake command`, callback);
+  t.true(await callback.called);
 });
