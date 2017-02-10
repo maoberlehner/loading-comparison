@@ -1,8 +1,19 @@
 #!/usr/bin/env node
 const args = require(`args`);
+const fs = require(`fs`);
+const path = require(`path`);
 
-const browsertime = require(`../lib/browsertime`);
-const logResult = require(`../lib/log-result`);
+const buildCommand = require(`../lib/build-command`).default;
+const executeCommand = require(`../lib/execute-command`).default;
+const logResult = require(`../lib/log-result`).default;
+
+const browsertimeScript = require.resolve(`browsertime/bin/browsertime.js`);
+const resultDirectory = path.resolve(__dirname, `../results`);
+const resultFile = `browsertime.json`;
+const resultFilePath = path.resolve(
+  resultDirectory,
+  resultFile
+);
 
 args
   .option(
@@ -25,11 +36,29 @@ args
     `One or more (space separated) urls (e.g. -u "https://www.wikipedia.org https://github.com/").`,
     `https://www.wikipedia.org`
   );
-const options = args.parse(process.argv);
-const urls = options.url.split(` `).filter(url => url.length);
+
+const cliArguments = args.parse(process.argv);
+const urls = cliArguments.url.split(` `).filter(url => url.length);
+
+const options = [
+  browsertimeScript,
+  {
+    browser: cliArguments.browser,
+    'connectivity.profile': cliArguments.connectivity,
+    iterations: cliArguments.iterations,
+    output: path.parse(resultFile).name,
+    resultDir: resultDirectory,
+    skipHar: ``,
+  },
+];
 
 let previousPromise = Promise.resolve();
 Promise.all(urls.map((url) => {
-  previousPromise = previousPromise.then(() => browsertime(url, options));
+  previousPromise = previousPromise.then(() => {
+    const command = buildCommand(options.concat([url]));
+    return executeCommand(command, () => (
+      JSON.parse(fs.readFileSync(resultFilePath)).statistics.timings
+    ));
+  });
   return previousPromise;
 })).then(results => logResult(results, urls));

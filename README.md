@@ -1,4 +1,6 @@
 # loading-comparison
+[![Build Status](https://travis-ci.org/maoberlehner/loading-comparison.svg?branch=master)](https://travis-ci.org/maoberlehner/loading-comparison)
+
 Compare the loading performance of two or more websites or website variations.
 
 ![CLI output example](https://cdn.rawgit.com/maoberlehner/loading-comparison/513bf0da/screenshot.png)

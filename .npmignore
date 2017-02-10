@@ -1,5 +1,7 @@
+.babelrc
 .editorconfig
 .eslintrc
+.travis.yml
 
 screenshot.png
 yarn.lock
