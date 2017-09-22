@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "args": "^2.2.4",
-    "browsertime": "1.0.0-beta.23",
+    "browsertime": "1.0.0",
     "chalk": "^1.1.3",
     "cli-table": "^0.3.1"
   },
