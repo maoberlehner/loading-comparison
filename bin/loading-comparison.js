@@ -44,6 +44,7 @@ const options = [
   browsertimeScript,
   {
     browser: cliArguments.browser,
+    'connectivity.engine': `throttle`,
     'connectivity.profile': cliArguments.connectivity,
     headless: true,
     iterations: cliArguments.iterations,
