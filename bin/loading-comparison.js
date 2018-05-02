@@ -45,6 +45,7 @@ const options = [
   {
     browser: cliArguments.browser,
     'connectivity.profile': cliArguments.connectivity,
+    headless: true,
     iterations: cliArguments.iterations,
     output: path.parse(resultFile).name,
     resultDir: resultDirectory,
