@@ -27,6 +27,11 @@ args
     `cable`
   )
   .option(
+    `headless`,
+    `Run the browser in headless mode. Needs Firefox Nightly or latest Chrome.`,
+    false
+  )
+  .option(
     [`n`, `iterations`],
     `Number of times to test the url (restarting the browser between each test).`,
     3
@@ -46,7 +51,7 @@ const options = [
     browser: cliArguments.browser,
     'connectivity.engine': `throttle`,
     'connectivity.profile': cliArguments.connectivity,
-    headless: true,
+    headless: cliArguments.headless,
     iterations: cliArguments.iterations,
     output: path.parse(resultFile).name,
     resultDir: resultDirectory,
