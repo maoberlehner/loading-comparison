@@ -14,7 +14,7 @@ npm install -g loading-comparison
 loading-comparison -u "https://www.wikipedia.org https://github.com/"
 
 # Run the help command to see all available options.
-loading-comparison -h
+loading-comparison --help
 ```
 
 ## Credits
