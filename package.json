@@ -24,9 +24,10 @@
   },
   "dependencies": {
     "args": "^4.0.0",
-    "browsertime": "^2.5.0",
+    "browsertime": "^9.0.0",
     "chalk": "^2.4.1",
-    "cli-table": "^0.3.1"
+    "cli-table": "^0.3.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -39,12 +40,15 @@
     "sinon": "^5.0.2"
   },
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "ava": {
     "require": [
       "babel-register"
     ],
     "babel": "inherit"
-  }
+  },
+  "snyk": true
 }
